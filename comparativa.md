@@ -1,9 +1,9 @@
 # Comparativa ERP-CRM · UD2
 
 ## 1. Datos
-- propietario: TU_USUARIO_DE_GITHUB
-- empresa: N.º y nombre
-- palabra_del_dia:
+- propietario: mgg06
+- empresa: 03 — Mensajería urbana "Rapidísimo"
+- palabra_del_dia: Compañeros
 
 ## 2. Licencias y modelos
 

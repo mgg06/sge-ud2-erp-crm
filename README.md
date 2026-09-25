@@ -5,4 +5,3 @@
 * **Alumna:** Marta González González
 * **Curso:** 2.º DAM
 * **Empresa asignada:** Caso 03 — Mensajería urbana "Rapidísimo"
-* **Palabra del Dia:** Compañeros
