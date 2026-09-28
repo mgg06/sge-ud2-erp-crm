@@ -139,4 +139,19 @@ Para esta sección me he metido en la documentación oficial de los cuatro siste
 
 ## 4. Fe de erratas del tema 2
 
+La actividad nos pide localizar dos, pero yo he encontrado 3: 
+
+**Bases de datos compatibles con SuiteCRM**
+En la diapositiva de soluciones CRM, el temario dice que SuiteCRM es compatible con MySQL, MariaDB y SQL Server. El problema es que esto ya no es verdad. En las versiones antiguas (la rama 7.x) sí que lo soportaba, pero desde el salto a la versión 8 cambiaron toda la arquitectura y quitaron el soporte oficial para la base de datos de Microsoft. Si miramos su matriz de compatibilidad técnica actual, dejan clarísimo que solo admiten MySQL y MariaDB. Instalarlo sobre SQL Server hoy en día para Rapidísimo directamente nos daría error.
+* Fuente consultada (28/09/2026): Matriz de compatibilidad en la documentación oficial de SuiteCRM (https://docs.suitecrm.com/8.x/admin/installation-guide/compatibility-matrix/).
+
+**El desarrollador real de SuiteCRM**
+En esa misma diapositiva, dice que SuiteCRM está desarrollado por la comunidad SugarCRM. Esto es un error histórico, ya que SuiteCRM nació justo por lo contrario, la empresa SugarCRM decidió cerrar su código para hacerlo de pago. Cuando pasó esto, la empresa SalesAgility cogió la última versión libre que quedaba y montó una bifurcación para crear SuiteCRM a partir de ella y mantenerla libre. Así que son competencia directa y el desarrollo lo lleva SalesAgility junto a su propia comunidad, no la de SugarCRM.
+* Fuente consultada (28/09/2026): Historia del proyecto en la página oficial (https://suitecrm.com/about/).
+
+**La popularidad de Fat Free CRM en GitHub**
+También he visto que se dice que Fat Free CRM es como el CRM más valorado en GitHub por su comunidad activa. Ese dato se ha quedado bastante anticuado, Si nos metemos hoy a GitHub, Fat Free CRM tiene unas 3.000 estrellas. No está mal para un proyecto pequeño, pero si lo comparamos con otros gigantes del software libre, Odoo pasa de las 35.000 estrellas y ERPNext tiene más de 16.000. Actualmente está lejísimos de ser el sistema más valorado por los desarrolladores.
+* Fuente consultada (28/09/2026): Repositorios oficiales de GitHub de Odoo (https://github.com/odoo/odoo) y Fat Free CRM (https://github.com/fatfreecrm/fat_free_crm).
+
+
 ## 5. Matriz de decisión y recomendación
