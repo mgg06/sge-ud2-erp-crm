@@ -33,16 +33,109 @@ Aunque las características detalladas van en el apartado siguiente, para dejar 
 * **Salesforce**: es un CRM propietario con licencia comercial cerrada que se ofrece como un servicio directamente en la nube.
 
 **Fuentes consultadas:**
-* Proyecto GNU (FSF), definición de software libre en gnu.org/philosophy
-* Open Source Initiative, The Open Source Definition en opensource.org
-* Choose a License, explicación de las implicaciones de las licencias AGPL y LGPL en choosealicense.com 
-* Presentación de clase sobre sistemas ERP-CRM libres y propietarios 
+* Proyecto GNU (FSF), definición de software libre en gnu.org/philosophy - 28/09/2026
+* Open Source Initiative, The Open Source Definition en opensource.org - 28/09/2026
+* Choose a License, explicación de las implicaciones de las licencias AGPL y LGPL en choosealicense.com - 28/09/2026
+* Presentación de clase sobre sistemas ERP-CRM libres y propietarios - 28/09/2026
 
 ## 3. Fichas técnicas
-### ERP libre:
-### ERP propietario:
-### CRM libre:
-### CRM propietario:
+
+Para esta sección me he metido en la documentación oficial de los cuatro sistemas. La idea es saber los detalles de cada programa para saberlos exactamente al montarlo para gestionar a los repartidores y pedidos de Rapidísimo. 
+
+### ERP libre: Odoo Community
+
+*   **Licencia exacta:** GNU LGPLv3. Es una licencia copyleft más relajada que nos deja enlazar módulos propios sin obligarnos a hacer público nuestro código, algo que viene muy bien para integraciones a medida.
+*Fuente: [Acuerdos Legales de Odoo](https://www.odoo.com/es_ES/page/legal) - 28/09/2026*
+
+*   **Versión vigente:** Odoo 19.
+*Fuente: [Descargas y versiones actuales](https://www.odoo.com/es_ES/page/download) - 28/09/2026*
+
+*   **Lenguaje del servidor:** Todo el backend y la lógica de negocio del servidor están programados en Python.
+*Fuente: [Documentación técnica para desarrolladores](https://www.odoo.com/documentation/master/es/developer.html) - 28/09/2026*
+
+*   **SGBD compatibles:** PostgreSQL. Son súper estrictos con esto, es el único motor de base de datos que soportan de manera oficial, olvidándonos de MySQL u Oracle.
+*Fuente: [Guía de instalación de base de datos](https://www.odoo.com/documentation/master/es/administration/install.html) - 28/09/2026*
+
+*   **Modalidad:** Instalación local (On-Premise). Implica que nosotros mismos descargamos el código, lo alojamos en un servidor propio y nos encargamos de todo el mantenimiento.
+*Fuente: [Ediciones y alojamiento Odoo](https://www.odoo.com/es_ES/page/editions) - 28/09/2026*
+
+*   **Módulos principales:** Ventas, CRM, Facturación, Inventario y Punto de Venta (POS). Para Rapidísimo, tirar del módulo de Inventario y Ventas sería clave para organizar las rutas.
+*Fuente: [Catálogo oficial de Apps](https://www.odoo.com/es_ES/app/apps) - 28/09/2026*
+
+*   **Requisitos:** Piden una máquina con Linux (recomiendan Ubuntu), tener instalado Python 3.10 o superior, PostgreSQL como motor de base de datos y librerías adicionales como wkhtmltopdf para generar los informes.
+*Fuente: [Requisitos de instalación en sistema](https://www.odoo.com/documentation/master/es/administration/install.html) - 28/09/2026*
+
+
+### ERP propietario: SAP S/4HANA
+
+*   **Licencia exacta:** Comercial propietaria. Es un modelo totalmente cerrado donde se paga por el uso y las licencias de usuario.
+*Fuente: [Centro de Confianza SAP - Acuerdos](https://www.sap.com/spain/about/trust-center/agreements.html) - 28/09/2026*
+
+*   **Versión vigente:** SAP S/4HANA 2025 (suelen nombrar las versiones potentes con el año en curso).
+*Fuente: [Información de producto S/4HANA](https://www.sap.com/spain/products/erp/s4hana.html) - 28/09/2026*
+
+*   **Lenguaje del servidor:** ABAP. Es un lenguaje de programación altísimamente específico que fue creado por la propia SAP para desarrollar dentro de sus entornos.
+*Fuente: [Entorno de desarrollo SAP ABAP](https://help.sap.com/docs/abap) - 28/09/2026*
+
+*   **SGBD compatibles:** Exclusivamente SAP HANA. Es su propia base de datos "in-memory", diseñada para procesar toda la información en la memoria RAM en vez de en el disco duro para que las consultas vuelen.
+*Fuente: [Características de la base de datos SAP HANA](https://www.sap.com/spain/products/technology-platform/hana/features.html) - 28/09/2026*
+
+*   **Modalidad:** Híbrida. Dan la libertad de instalarlo en tus propios servidores físicos (On-Premise) o usar su infraestructura en la nube (Cloud).
+*Fuente: [Opciones de despliegue de S/4HANA](https://www.sap.com/spain/products/erp/s4hana/features.html) - 28/09/2026*
+
+*   **Módulos principales:** Finanzas (FI), Controlling (CO), Ventas y Distribución (SD) y Gestión de Materiales (MM).
+*Fuente: [Capacidades del ERP SAP](https://www.sap.com/spain/products/erp/s4hana/features.html) - 28/09/2026*
+
+*   **Requisitos:** Es bastante duro de mover. Exige hardware certificado oficialmente por SAP, usar su motor HANA y un sistema operativo Linux de nivel empresarial, limitándose normalmente a SUSE o Red Hat.
+*Fuente: [Portal de ayuda SAP On-Premise](https://help.sap.com/docs/SAP_S4HANA_ON-PREMISE?locale=es-ES) - 28/09/2026*
+
+
+### CRM libre: SuiteCRM
+
+*   **Licencia exacta:** AGPLv3. Justo lo que comentaba en el bloque anterior, mucho cuidado con usarlo en red para integrar pedidos web sin querer liberar nuestras modificaciones.
+*Fuente: [Licencia del proyecto SuiteCRM](https://suitecrm.com/about/) - 28/09/2026*
+
+*   **Versión vigente:** SuiteCRM 8.7.
+*Fuente: [Notas de la última versión (Releases)](https://docs.suitecrm.com/8.x/admin/releases/) - 28/09/2026*
+
+*   **Lenguaje del servidor:** PHP. Todo el núcleo está programado con este lenguaje, apoyándose fuertemente en el framework Symfony para estructurar el backend.
+*Fuente: [Matriz de compatibilidad y arquitectura](https://docs.suitecrm.com/8.x/admin/installation-guide/compatibility-matrix/) - 28/09/2026*
+
+*   **SGBD compatibles:** MySQL y MariaDB.
+*Fuente: [Bases de datos soportadas](https://docs.suitecrm.com/8.x/admin/installation-guide/compatibility-matrix/) - 28/09/2026*
+
+*   **Modalidad:** Instalación local (On-Premise) para desplegarlo íntegramente en nuestra propia infraestructura.
+*Fuente: [Descargas oficiales SuiteCRM](https://suitecrm.com/download/) - 28/09/2026*
+
+*   **Módulos principales:** Cuentas (para fichar a los comercios locales), Contactos, Oportunidades de venta y el módulo de Casos, que serviría para llevar el control de incidencias o quejas con los repartos.
+*Fuente: [Características y módulos de SuiteCRM](https://suitecrm.com/features/) - 28/09/2026*
+
+*   **Requisitos:** Hay que montar una arquitectura web, un servidor HTTP como Apache o Nginx, tener instalado PHP 8.2 o superior, la base de datos MySQL/MariaDB y algunas extensiones de PHP activas como cURL o GD.
+*Fuente: [Requisitos previos de instalación](https://docs.suitecrm.com/8.x/admin/installation-guide/downloading-installing/) - 28/09/2026*
+
+
+### CRM propietario: Salesforce
+
+*   **Licencia exacta:** Comercial propietaria cerrada. Funcionan con un modelo puramente SaaS (Software as a Service) donde se paga una cuota mensual por cada usuario que entre al sistema.
+*Fuente: [Documentación legal Salesforce](https://www.salesforce.com/es/company/legal/) - 28/09/2026*
+
+*   **Versión vigente:** Winter '27. No se complican con números normales, lanzan actualizaciones estacionales de forma global para todos sus clientes a la vez.
+*Fuente: [Lanzamientos y versiones estacionales](https://www.salesforce.com/es/releases/) - 28/09/2026*
+
+*   **Lenguaje del servidor:** Apex. Es un lenguaje propio orientado a objetos que crearon ellos, y la verdad es que la sintaxis es igual a Java.
+*Fuente: [Guía para desarrolladores sobre Apex](https://developer.salesforce.com/docs/) - 28/09/2026*
+
+*   **SGBD compatibles:** Trabajan con una arquitectura "multitenant" soportada por bases de datos Oracle, pero el cliente final ni lo ve ni lo gestiona, todo es transparente.
+*Fuente: [Arquitectura de plataforma Salesforce](https://architect.salesforce.com/fundamentals/architecture-landscape) - 28/09/2026*
+
+*   **Modalidad:** 100% Nube (Cloud). Todo se aloja y procesa en sus servidores, no existe un instalador para montarlo en tus máquinas.
+*Fuente: [Definición y entorno Salesforce](https://www.salesforce.com/es/learning-centre/crm/what-is-salesforce/) - 28/09/2026*
+
+*   **Módulos principales:** Sales Cloud (fuerza de ventas), Service Cloud (atención al cliente y soporte) y Marketing Cloud (gestión de campañas).
+*Fuente: [Catálogo de productos Salesforce](https://www.salesforce.com/es/products/) - 28/09/2026*
+
+*   **Requisitos:** Al ser una plataforma totalmente en la nube, el sistema informático de la empresa da un poco igual. Solo se requiere una conexión a internet estable y entrar desde un navegador moderno (Chrome, Edge, Safari o Firefox).
+*Fuente: [Navegadores compatibles](https://help.salesforce.com/s/articleView?id=sf.getstart_browsers_sfx.htm&type=5&language=es) - 28/09/2026*
 
 ## 4. Fe de erratas del tema 2
 
