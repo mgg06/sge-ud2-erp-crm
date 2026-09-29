@@ -137,6 +137,7 @@ Para esta sección me he metido en la documentación oficial de los cuatro siste
 *   **Requisitos:** Al ser una plataforma totalmente en la nube, el sistema informático de la empresa da un poco igual. Solo se requiere una conexión a internet estable y entrar desde un navegador moderno (Chrome, Edge, Safari o Firefox).
 *Fuente: [Navegadores compatibles](https://help.salesforce.com/s/articleView?id=sf.getstart_browsers_sfx.htm&type=5&language=es) - 28/09/2026*
 
+
 ## 4. Fe de erratas del tema 2
 
 La actividad nos pide localizar dos, pero yo he encontrado 3: 
@@ -155,3 +156,58 @@ También he visto que se dice que Fat Free CRM es como el CRM más valorado en G
 
 
 ## 5. Matriz de decisión y recomendación
+
+Para tomar la mejor decisión, he hecho una matriz comparando tres opciones que son muy diferentes: un ERP libre (Odoo Community), un CRM propietario que es líder en el mercado (Salesforce) y un CRM libre (SuiteCRM). 
+
+Los criterios y los pesos los he ajustado a la realidad que tendría Rapidísimo, ya que son una empresa local con un presupuesto limitado, cuentan con 25 mensajeros que necesitan trabajar desde el móvil en la calle, y su principal canal para recibir pedidos de los comercios es WhatsApp.
+
+### Justificación de las puntuaciones (1 al 5)
+
+**1. Coste de licencias e infraestructura (Peso: 20%)**
+*   **Odoo Community (5):** Al ser de código abierto, evitamos el pago por licencia de usuario. Solo tendríamos que asumir el coste del servidor mensual, y eso es bastante asumible para la empresa.
+*   **Salesforce (1):** Puntuación mínima. Asumir el pago mensual de licencias para 25 mensajeros y el personal de oficina reduciría drásticamente los márgenes de beneficio de una empresa local.
+*   **SuiteCRM (5):** Al igual que Odoo, el coste de la licencia es cero y los requisitos para el servidor web son bastante económicos.
+
+**2. Usabilidad móvil para los mensajeros (Peso: 25%)**
+*   **Odoo Community (4):** Su diseño web es "responsive" y se adapta muy bien a las pantallas de los móviles. Los repartidores podrían ir marcando sus entregas con fácilmente.
+*   **Salesforce (5):** Tienen con una aplicación móvil nativa que está muy pulida y es rápida, diseñada específicamente para trabajar fuera de la oficina con mucha fluidez.
+*   **SuiteCRM (2):** En este aspecto se queda atrás. La interfaz desde el móvil es más antigua y menos intuitiva, lo que resultaría poco ágil para los mensajeros durante su ruta.
+
+**3. Integración de pedidos vía WhatsApp (Peso: 20%)**
+*   **Odoo Community (3):** Por defecto no incluye una integración nativa. Nos tocaría desarrollar un módulo a medida o utilizar herramientas de terceros para conectar la API de WhatsApp Business.
+*   **Salesforce (5):** Destaca por su omnicanalidad. Tiene integración directa con WhatsApp, lo que permite que los mensajes entren directamente al sistema para ser gestionados.
+*   **SuiteCRM (2):** Requiere bastante trabajo técnico. Al ser un sistema más tradicional, conectar canales modernos exige programar integraciones complejas que no siempre son estables.
+
+**4. Logística y control de paquetes (Peso: 15%)**
+*   **Odoo Community (5):** Al ser un ERP completo, su módulo de Inventario es muy potente. Nos permite tratar cada paquete como si fuera stock en movimiento y gestionar las rutas de reparto.
+*   **Salesforce (2):** Es una herramienta enfocada a ventas. Podríamos adaptar el sistema creando objetos personalizados para simular paquetes, pero no está diseñada para la logística.
+*   **SuiteCRM (1):** Resultaría muy complejo y poco eficiente intentar gestionar rutas y paquetes en un sistema pensado principalmente para el seguimiento comercial.
+
+**5. Independencia del proveedor "Vendor Lock-in" (Peso: 10%)**
+*   **Odoo Community (4):** Al tener el código fuente y la base de datos alojados en nuestro propio servidor, mantenemos una gran independencia, aunque seguimos sujetos a la arquitectura de Odoo.
+*   **Salesforce (1):** Dependencia total. Si cambian las tarifas o se interrumpe el servicio, la empresa queda paralizada sin acceso a su propia base de datos de forma directa.
+*   **SuiteCRM (5):** Independencia absoluta. Al ser software libre bajo licencia AGPLv3, la empresa es dueña total de sus datos y de las modificaciones que haga en el código.
+
+**6. Soporte técnico y comunidad (Peso: 10%)**
+*   **Odoo Community (4):** No cuenta con soporte oficial directo en esta versión, pero tiene una comunidad de desarrolladores enorme, lo que facilita encontrar soluciones en foros y documentación.
+*   **Salesforce (5):** Al pagar las licencias, se incluye un soporte técnico corporativo directo con acuerdos de nivel de servicio bastante estrictos.
+*   **SuiteCRM (3):** Tiene una comunidad activa, pero al ser más reducida, los tiempos para encontrar soluciones a problemas técnicos pueden ser mayores.
+
+### Resultados totales ponderados
+
+Aplicando los porcentajes a cada puntuación, estos son los resultados sobre un máximo de 5 puntos:
+
+*   **Odoo Community:** (5×0.20) + (4×0.25) + (3×0.20) + (5×0.15) + (4×0.10) + (4×0.10) = **4.15 puntos**
+*   **Salesforce:** (1×0.20) + (5×0.25) + (5×0.20) + (2×0.15) + (1×0.10) + (5×0.10) = **3.35 puntos**
+*   **SuiteCRM:** (5×0.20) + (2×0.25) + (2×0.20) + (1×0.15) + (5×0.10) + (3×0.10) = **2.85 puntos**
+
+### Recomendación y plan de riesgos
+
+Tras analizar los resultados de la matriz, la recomendación final que daría para Rapidísimo es implantar Odoo Community. Es la opción que mejor resuelve la parte logística gracias a su módulo de inventario, permitiendo al mismo tiempo mantener unos costes asumibles al no requerir el pago de 25 licencias mensuales. Además, ofrece una interfaz móvil suficientemente buena para los mensajeros.
+
+Pero, antes de implantarlo, es necesario tener en cuenta los siguientes riesgos:
+
+*   **Coste total de propiedad (TCO):** Aunque el software es libre, debemos hacer un presupuesto de el mantenimiento del servidor y, de manera crucial, el coste del desarrollo a medida para integrar la API de WhatsApp con Odoo.
+*   **Dependencia del proveedor (Servicios):** Al necesitar desarrollos personalizados, corremos el riesgo de depender del programador o de la consultora externa que realice esa integración. Si la relación termina, el mantenimiento del código recaerá en nosotros.
+*   **Soporte técnico:** Al no disponer de la versión Enterprise, no contamos con soporte oficial ante caídas del sistema. Si ocurre un fallo grave durante el horario de reparto, dependeremos exclusivamente de nuestro propio equipo técnico.
+*   **Migración futura:** La base de datos de Odoo (PostgreSQL) tiene una estructura muy específica. Si en el futuro la empresa crece a nivel nacional y necesita migrar a otro sistema más grande, la extracción y transformación de todo el histórico de envíos será un proceso técnico complejo.

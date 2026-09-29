@@ -1,0 +1,7 @@
+Criterio;Peso(%);Odoo Community;Salesforce;SuiteCRM
+Coste de licencias e infraestructura;20;5;1;5
+Usabilidad movil para mensajeros;25;4;5;2
+Integracion de pedidos via WhatsApp;20;3;5;2
+Logistica y control de paquetes;15;5;2;1
+Independencia del proveedor ("vendor lock-in");10;4;1;5
+Soporte tecnico y comunidad;10;4;5;3
